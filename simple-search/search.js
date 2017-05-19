@@ -6,7 +6,8 @@ var inStock = [ 'apples', 'eggs', 'milk', 'cookies', 'cheese', 'bread', 'lettuce
 var search;
 
 function print(message) {
-  document.getElementsByTagName('body')[0].innerHTML += ( '<p>' + message + '</p>');
+  document.getElementsByTagName('body')[0].innerHTML += ( '<li>' + message + '</li>');
+  alert(message);
 }
 
 while (true) {
@@ -14,7 +15,7 @@ while (true) {
   if (search === 'quit') {
     break;
   } else if (search === 'list') {
-      print(inStock.join(', '));
+      print("Here's what we have in stock. \n\n" + inStock.join(', '));
   } else {
       if (inStock.indexOf(search) !== -1) {
         print("Yes, we have " + search + " in stock.");
