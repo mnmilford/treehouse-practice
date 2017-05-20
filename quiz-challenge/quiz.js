@@ -4,7 +4,7 @@
 
 // Basic function to add html to body
 function print(message) {
-  document.getElementsByTagName('body')[0].innerHTML += message;
+  document.getElementById('output').innerHTML = message;
 }
 
 // Setup the variables needed before the loop
