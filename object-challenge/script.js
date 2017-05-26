@@ -33,7 +33,7 @@ const students = [
 
 function buildStudentString(student) {
   let keys = Object.keys(student);
-  let str = "<div><strong>Student: " + student.name + "</strong>";
+  let str = "<div class='student'><strong>Student: " + student.name + "</strong>";
   for (let i = 1; i < Object.keys(student).length; i++) {
     str += "<p>" + keys[i][0].toUpperCase() + keys[i].slice(1) + ": " + student[keys[i]] + "</p>";
   }
@@ -49,20 +49,19 @@ function buildMainString() {
   return str;
 }
 
-// Allow user to search for student records, display all records, or quit the program
-do {
-  var search = prompt("Search student records: Type a student's last name, type 'all' or type 'quit' to exit the program");
+// Allow user to search for student records or display all records
+document.getElementsByTagName('button')[0].addEventListener("click", function() {
+
+  var search = prompt("Search student records: Type a student's last name or type 'all' to see all records");
 
   if (search === "all") {
-    document.getElementsByTagName('main')[0].innerHTML += buildMainString();
+    document.getElementsByTagName('main')[0].innerHTML = buildMainString();
   }
 
   for (let student of students) {
-    let str = ""
     if (search === student.name.split(' ')[1]) {
-      document.getElementsByTagName('main')[0].innerHTML += buildStudentString(student);
+      document.getElementsByTagName('main')[0].innerHTML = buildStudentString(student);
     }
-
   }
 
-} while (search.toLowerCase() !== "quit");
+});
