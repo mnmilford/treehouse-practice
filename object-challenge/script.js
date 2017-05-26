@@ -6,27 +6,27 @@ var students = [
     points: 4220
   },
   {
-    name:
-    track:
-    achievements:
-    points:
+    name: "Richard Richardson",
+    track: "Android Development",
+    achievements: 22,
+    points: 2000
   },
   {
-    name:
-    track:
-    achievements:
-    points:
+    name: "Mark Jackson",
+    track: "iOS Development",
+    achievements: 45,
+    points: 3800
   },
   {
-    name:
-    track:
-    achievements:
-    points:
+    name: "Gary Johnson",
+    track: "Web Design",
+    achievements: 30,
+    points: 3000
   },
   {
-    name:
-    track:
-    achievements:
-    points:
+    name: "Mary Matthews",
+    track: "Ruby",
+    achievements: 64,
+    points: 6407
   }
 ];
