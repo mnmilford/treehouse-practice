@@ -32,9 +32,10 @@ const students = [
 ];
 
 function buildStudentString(student) {
+  let keys = Object.keys(student);
   let str = "<div><strong>Student: " + student.name + "</strong>";
-  for (let prop in student) {
-    str += "<p>" + prop[0].toUpperCase() + prop.slice(1) + ": " + student[prop] + "</p>";
+  for (let i = 1; i < Object.keys(student).length; i++) {
+    str += "<p>" + keys[i][0].toUpperCase() + keys[i].slice(1) + ": " + student[keys[i]] + "</p>";
   }
   str += "</div>";
   return str;
