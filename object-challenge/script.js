@@ -49,5 +49,20 @@ function buildMainString() {
   return str;
 }
 
-// Add the output from buildMainString() to the <main> section of the html document
-document.getElementsByTagName('main')[0].innerHTML += buildMainString();
+// Allow user to search for student records, display all records, or quit the program
+do {
+  var search = prompt("Search student records: Type a student's last name, type 'all' or type 'quit' to exit the program");
+
+  if (search === "all") {
+    document.getElementsByTagName('main')[0].innerHTML += buildMainString();
+  }
+
+  for (let student of students) {
+    let str = ""
+    if (search === student.name.split(' ')[1]) {
+      document.getElementsByTagName('main')[0].innerHTML += buildStudentString(student);
+    }
+
+  }
+
+} while (search.toLowerCase() !== "quit");
