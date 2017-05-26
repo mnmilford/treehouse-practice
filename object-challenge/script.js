@@ -34,13 +34,15 @@ const students = [
 function buildStudentString(student) {
   let str = "<h3>Student: " + student.name + "</h3>";
   for (let prop in student) {
-    str += "<p>" + prop + ": " + student[prop] + "</p>";
+    str += "<p>" + prop[0].toUpperCase() + prop.slice(1) + ": " + student[prop] + "</p>";
   }
   return str;
 }
 
-// for (let student of students) {
-//   let str = "";
-//   str += buildStudentString(student);
-//   return str;
-// }
+function buildMainString() {
+  let str = "";
+  for (let student of students) {
+    str += buildStudentString(student);
+  }
+  return str;
+}
