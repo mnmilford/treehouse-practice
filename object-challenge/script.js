@@ -1,4 +1,4 @@
-var students = [
+const students = [
   {
     name: "Michael Milford",
     track: "Front End Development",
@@ -30,3 +30,17 @@ var students = [
     points: 6407
   }
 ];
+
+function buildStudentString(student) {
+  let str = "<h3>Student: " + student.name + "</h3>";
+  for (let prop in student) {
+    str += "<p>" + prop + ": " + student[prop] + "</p>";
+  }
+  return str;
+}
+
+// for (let student of students) {
+//   let str = "";
+//   str += buildStudentString(student);
+//   return str;
+// }
