@@ -47,3 +47,6 @@ function buildMainString() {
   }
   return str;
 }
+
+// Add the output from buildMainString() to the <main> section of the html document
+document.getElementsByTagName('main')[0].innerHTML += buildMainString();
