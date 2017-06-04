@@ -16,7 +16,7 @@ h1 {
 }
 
 img {
-  width: 200px;
+  width: 100%;
 }
 
 ul {
@@ -24,7 +24,7 @@ ul {
   margin: 0 auto;
   padding: 0;
   display: block;
-  max-width: 780px;
+  max-width: 1100px;
   text-align: center;
 }
 
@@ -34,10 +34,7 @@ ul li {
   background:white;
   margin:10px;
   cursor: pointer;
-}
-
-ul li img {
-  display: block;
+  width: calc(50% - 40px);
 }
 
 a {
@@ -63,4 +60,19 @@ a {
   width: 100%;
   padding: 0 15px;
   box-sizing: border-box;
+}
+
+@media (min-width: 400px) {
+  .fullsize {
+    width: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .fullsize {
+    padding: 0;
+  }
+  ul li {
+    width: calc(33.3333% - 60px);
+  }
 }
