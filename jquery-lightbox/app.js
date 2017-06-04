@@ -1,15 +1,16 @@
-// Hide overlay to begin
-$('.overlay').hide();
+let $overlay = $('<div class="overlay"></div>');
+let $img = $("<img class='fullsize'></img>");
 
-$("#imageGallery img").click(function(event){
-  let $imgSrc = $(this).clone().attr("src");
-  $('.overlay').append("<img class='fullsize' src='" + $imgSrc + "'</img>");
-  $('.overlay').fadeIn("fast", function(){
-    // If user clicks on overlay it will fade out
-    $(this).click(function(){
-      $(this).fadeOut("fast", function(){
-        $(this).empty();
-      });
-    })
-  });
+$("#imageGallery img").click(function(){
+  let $imgSrc = $(this).attr("src");
+  $img.attr("src", $imgSrc);
+  $overlay.append($img);
+  $("body").append($overlay);
+  $overlay.animate({opacity: 1}, 200);
+  $overlay.click(function(){
+    $(this).animate({opacity: 0}, 200, function(){
+      $(this).remove();
+    });
+  })
 });
+
