@@ -76,3 +76,13 @@ a {
     width: calc(33.3333% - 60px);
   }
 }
+
+@media (min-width: 1366px) {
+  ul li {
+    width: calc(25% - 80px);
+  }
+
+  ul {
+    max-width: 1250px;
+  }
+}
