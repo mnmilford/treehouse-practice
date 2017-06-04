@@ -45,7 +45,8 @@ a {
 
 .overlay {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  padding-top: 35%;
   align-items: center;
   top: 0;
   bottom: 0;
@@ -59,24 +60,48 @@ a {
   opacity: 0;
 }
 
-.fullsize {
-  width: 100%;
-  padding: 0 15px;
+.caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 90%;
+  background: #5f2c82;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(left, #49a09d, #5f2c82);
+  background: -o-linear-gradient(left, #49a09d, #5f2c82);
+  background: linear-gradient(to right, #49a09d, #5f2c82);  /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 15px;
+  color: white;
+  font-weight: bold;
   box-sizing: border-box;
 }
 
-@media (min-width: 400px) {
-  .fullsize {
-    width: 400px;
-  }
+.fullsize {
+  width: 90%;
+  padding: 15px;
+  padding-bottom: 0;
+  background: #5f2c82;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #49a09d, #5f2c82);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #49a09d, #5f2c82); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
-  .fullsize {
-    padding: 0;
+  .fullsize,
+  .caption {
+    width: 400px;
+  }
+  .overlay {
+    padding-top: 10%;
   }
   ul li {
     width: calc(33.3333% - 60px);
+  }
+}
+
+@media (min-width: 768px) and (orientation: portrait) {
+  .overlay {
+    padding-top: 25%;
   }
 }
 
