@@ -9,9 +9,12 @@ $menuItems.each(function(item){
 $menu.after($mobileMenu);
 
 $mobileMenu.click(function(){
-  if ($(this).css("height") === "40px") {
-    $(this).animate({height: "240px"});
+  let $defaultHeight = $('.mobileLink').css("height").slice(0,2);
+  if ($(this).css("height") === $defaultHeight + "px") {
+    // $(this).animate({height: $defaultHeight * 6 + "px"});
+    $(this).css({height: $defaultHeight * 6 + "px"});
   } else {
-    $(this).animate({height: "40px"});
+    // $(this).animate({height: $defaultHeight + "px"});
+    $(this).css({height: $defaultHeight + "px"});
   }
 });
