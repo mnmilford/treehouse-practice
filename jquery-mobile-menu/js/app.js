@@ -9,12 +9,12 @@ $menuItems.each(function(item){
 $menu.after($mobileMenu);
 
 $mobileMenu.click(function(){
-  let $defaultHeight = $('.mobileLink').css("height").slice(0,2);
-  if ($(this).css("height") === $defaultHeight + "px") {
-    // $(this).animate({height: $defaultHeight * 6 + "px"});
-    $(this).css({height: $defaultHeight * 6 + "px"});
+  let $defaultHeight = $('.mobileLink').height();
+  if ($(this).height() === $defaultHeight) {
+    $(this).height($defaultHeight * 6);
+    $('.mobileLink:not(:nth-of-type(1)').fadeIn("slow").css("display", "flex");
   } else {
-    // $(this).animate({height: $defaultHeight + "px"});
-    $(this).css({height: $defaultHeight + "px"});
+    $(this).css({height: "50px"});
+    $('.mobileLink:not(:nth-of-type(1)').fadeOut("slow").css("display", "none");
   }
 });
