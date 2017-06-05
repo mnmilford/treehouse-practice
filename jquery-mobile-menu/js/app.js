@@ -1,9 +1,9 @@
 let $menu = $('#menu');
-let $menuItems = $('#menu ul li a');
+let $menuItems = $('#menu ul li');
 let $mobileMenu = $("<ul id='mobileMenu'><li class='mobileLink'>Menu</li></ul>");
 
 $menuItems.each(function(item){
-  $mobileMenu.append("<li class='mobileLink'>" + $(this).text()) + "</li>";
+  $mobileMenu.append("<li class='mobileLink'>" + $(this).html()) + "</li>";
 });
 
 $menu.after($mobileMenu);
@@ -14,7 +14,7 @@ $mobileMenu.click(function(){
     $(this).height($defaultHeight * 6);
     $('.mobileLink:not(:nth-of-type(1)').fadeIn("slow").css("display", "flex");
   } else {
-    $(this).css({height: "50px"});
+    $(this).height($defaultHeight);
     $('.mobileLink:not(:nth-of-type(1)').fadeOut("slow").css("display", "none");
   }
 });
