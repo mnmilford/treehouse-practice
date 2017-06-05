@@ -10,18 +10,21 @@ body {
 
 #menu {
   background: #384047;
-  height: 60px;
+  /*height: 60px;*/
   padding: 0 5px 0;
   text-align: center;
 }
 
 ul {
   list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 ul li {
   display: inline-block;
-  width: 84px;
+  width: 100px;
   text-align: center;
 }
 
