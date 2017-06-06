@@ -39,7 +39,6 @@ function changeColor() {
   let r = $("#red").val();
   let g = $("#green").val();
   let b = $("#blue").val();
-  // let rgb = "rgb(" + r + ", " + g + ", " + b + ")";
   $('#newColor').css("background-color", "rgb(" + r + ", " + g + ", " + b + ")");
 }
 
@@ -47,9 +46,9 @@ function changeColor() {
 $("input[type='range']").change(changeColor);
 
 // Add a click listener to all color options
-$(".controls li").click(function(){
+$(".controls ul").on("click", "li", function(){
   $(this).addClass("selected");
   $(this).siblings().removeClass("selected");
-  // Reassign the $color variable everytime a new color is selected
+  // Reassign the $color variable every time a new color is selected
   color = $(this).css("background-color");
 })
