@@ -4,11 +4,6 @@ let $colorOptions = $('.controls ul');
 let $color = $(".selected").css("background-color");
 let newRGB = [];
 
-// Make the 'New Color' button reveal the color selector panel
-$newColorBtn.click(function(){
-  $('#colorSelect').fadeToggle(150);
-})
-
 // Function to append color picker color to the $colorOptions ul
 function addColorOption(rgbArray) {
   let result = $("<li></li>");
@@ -23,6 +18,19 @@ function changeToNewColor() {
   $colorOptions.children().last().addClass("selected");
 }
 
+// Function to update the color sampler when sliders change
+function changeColor() {
+  let r = $("#red").val();
+  let g = $("#green").val();
+  let b = $("#blue").val();
+  $('#newColor').css("background-color", "rgb(" + r + ", " + g + ", " + b + ")");
+}
+
+// Make the 'New Color' button reveal the color selector panel
+$newColorBtn.click(function(){
+  $('#colorSelect').fadeToggle(150);
+})
+
 // Make the Add Color button add a new circle to the available options
 $addColorBtn.click(function(){
   newRGB.splice(0);
@@ -33,14 +41,6 @@ $addColorBtn.click(function(){
   addColorOption(newRGB);
   changeToNewColor();
 })
-
-// Function to update the color sampler when sliders change
-function changeColor() {
-  let r = $("#red").val();
-  let g = $("#green").val();
-  let b = $("#blue").val();
-  $('#newColor').css("background-color", "rgb(" + r + ", " + g + ", " + b + ")");
-}
 
 // Run the changeColor() function when any sliders change
 $("input[type='range']").change(changeColor);
