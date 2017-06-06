@@ -1,6 +1,7 @@
 let $newColorBtn = $('#revealColorSelect');
 let $addColorBtn = $('#addNewColor');
 let $colorOptions = $('.controls ul');
+let $color = $(".selected").css("background-color");
 let newRGB = [];
 
 // Make the 'New Color' button reveal the color selector panel
@@ -42,4 +43,12 @@ $(".sliders input[value]").change(function(){
   let $blue = $("#blue").prop("value");
   let rgb = "rgb(" + $red + ", " + $green + ", " + $blue + ")";
   $('#newColor').css("background-color", rgb);
+})
+
+// Add a click listener to all color options
+$(".controls li").click(function(){
+  $(this).siblings().removeClass("selected");
+  $(this).addClass("selected");
+  // Reassign the $color variable everytime a new color is selected
+  color = $(this).css("background-color");
 })
