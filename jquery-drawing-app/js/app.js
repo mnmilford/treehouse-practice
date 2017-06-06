@@ -8,9 +8,11 @@ $newColorBtn.click(function(){
   $('#colorSelect').fadeToggle(150);
 })
 
-function addColorOption(rgb) {
+function addColorOption(rgbArray) {
   let result = $("<li></li>");
-  result.append(rgb);
+  let rgb = "rgb(" + rgbArray[0] + ", " + rgbArray[1] + ", " + rgbArray[2] + ")";
+  result.css("background", rgb);
+  result.appendTo($colorOptions);
 }
 
 $addColorBtn.click(function(){
@@ -19,4 +21,5 @@ $addColorBtn.click(function(){
   newRGB.push($("input[id='green']").prop("value"));
   newRGB.push($("input[id='blue']").prop("value"));
   $('#colorSelect').fadeToggle(150);
+  addColorOption(newRGB);
 })
