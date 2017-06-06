@@ -15,6 +15,7 @@ function addColorOption(rgbArray) {
   result.appendTo($colorOptions);
 }
 
+// Make the Add Color button add a new circle to the available options
 $addColorBtn.click(function(){
   newRGB.splice(0);
   newRGB.push($("input[id='red']").prop("value"));
@@ -22,4 +23,13 @@ $addColorBtn.click(function(){
   newRGB.push($("input[id='blue']").prop("value"));
   $('#colorSelect').fadeToggle(150);
   addColorOption(newRGB);
+})
+
+// Make color picker update the example color when sliders change
+$(".sliders input[value]").change(function(){
+  let $red = $("#red").prop("value");
+  let $green = $("#green").prop("value");
+  let $blue = $("#blue").prop("value");
+  let rgb = "rgb(" + $red + ", " + $green + ", " + $blue + ")";
+  $('#newColor').css("background-color", rgb);
 })
