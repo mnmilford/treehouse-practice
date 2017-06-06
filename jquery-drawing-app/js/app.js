@@ -13,15 +13,13 @@ $newColorBtn.click(function(){
 function addColorOption(rgbArray) {
   let result = $("<li></li>");
   let rgb = "rgb(" + rgbArray[0] + ", " + rgbArray[1] + ", " + rgbArray[2] + ")";
-  result.css("background", rgb);
+  result.css("background-color", rgb);
   result.appendTo($colorOptions);
 }
 
 // Function to update the selected color when a NEW color is chosen with the color picker
 function changeToNewColor() {
-  $colorOptions.children().each(function(){
-    $(this).removeClass("selected");
-  });
+  $colorOptions.children().removeClass("selected");
   $colorOptions.children().last().addClass("selected");
 }
 
@@ -36,19 +34,22 @@ $addColorBtn.click(function(){
   changeToNewColor();
 })
 
-// Make color picker update the example color when sliders change
-$(".sliders input[value]").change(function(){
-  let $red = $("#red").prop("value");
-  let $green = $("#green").prop("value");
-  let $blue = $("#blue").prop("value");
-  let rgb = "rgb(" + $red + ", " + $green + ", " + $blue + ")";
-  $('#newColor').css("background-color", rgb);
-})
+// Function to update the color sampler when sliders change
+function changeColor() {
+  let r = $("#red").val();
+  let g = $("#green").val();
+  let b = $("#blue").val();
+  // let rgb = "rgb(" + r + ", " + g + ", " + b + ")";
+  $('#newColor').css("background-color", "rgb(" + r + ", " + g + ", " + b + ")");
+}
+
+// Run the changeColor() function when any sliders change
+$("input[type='range']").change(changeColor);
 
 // Add a click listener to all color options
 $(".controls li").click(function(){
-  $(this).siblings().removeClass("selected");
   $(this).addClass("selected");
+  $(this).siblings().removeClass("selected");
   // Reassign the $color variable everytime a new color is selected
   color = $(this).css("background-color");
 })
