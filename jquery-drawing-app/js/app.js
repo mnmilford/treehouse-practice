@@ -3,11 +3,16 @@ let $addColorBtn = $('#addNewColor');
 let $colorOptions = $('.controls ul');
 let $color = $(".selected").css("background-color");
 let newRGB = [];
+let $canvas = $("canvas");
+let context = $canvas[0].getContext("2d");
+let lastEvent;
+let mouseDown = false;
 
 // Function to append color picker color to the $colorOptions ul
 function addColorOption(rgbArray) {
   let result = $("<li></li>");
   let rgb = "rgb(" + rgbArray[0] + ", " + rgbArray[1] + ", " + rgbArray[2] + ")";
+  $color = rgb;
   result.css("background-color", rgb);
   result.appendTo($colorOptions);
 }
@@ -50,5 +55,23 @@ $(".controls ul").on("click", "li", function(){
   $(this).addClass("selected");
   $(this).siblings().removeClass("selected");
   // Reassign the $color variable every time a new color is selected
-  color = $(this).css("background-color");
+  $color = $(this).css("background-color");
 })
+
+// Detect mouse events on canvas & draw lines
+$canvas.mousedown(function(e){
+  lastEvent = e;
+  mouseDown = true;
+}).mousemove(function(e){
+  if (mouseDown) {
+    context.beginPath();
+    context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
+    context.lineTo(e.offsetX, e.offsetY);
+    context.strokeStyle = $color;
+    context.lineWidth = 3;
+    context.stroke();
+    lastEvent = e;
+  }
+}).mouseup(function(){
+  mouseDown = false;
+});
