@@ -8,11 +8,20 @@ $newColorBtn.click(function(){
   $('#colorSelect').fadeToggle(150);
 })
 
+// Function to append color picker color to the $colorOptions ul
 function addColorOption(rgbArray) {
   let result = $("<li></li>");
   let rgb = "rgb(" + rgbArray[0] + ", " + rgbArray[1] + ", " + rgbArray[2] + ")";
   result.css("background", rgb);
   result.appendTo($colorOptions);
+}
+
+// Function to update the selected color when a NEW color is chosen with the color picker
+function changeToNewColor() {
+  $colorOptions.children().each(function(){
+    $(this).removeClass("selected");
+  });
+  $colorOptions.children().last().addClass("selected");
 }
 
 // Make the Add Color button add a new circle to the available options
@@ -23,6 +32,7 @@ $addColorBtn.click(function(){
   newRGB.push($("input[id='blue']").prop("value"));
   $('#colorSelect').fadeToggle(150);
   addColorOption(newRGB);
+  changeToNewColor();
 })
 
 // Make color picker update the example color when sliders change
