@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   </head>
-  <body>
+  <body id="home" data-spy="scroll" data-offset="100" data-target=".navbar">
     
     <!-- navbar -->
     <nav class="navbar fixed-top navbar-toggleable-sm navbar-inverse bg-primary mb-5">
@@ -53,7 +53,7 @@
     <div class="container pt-4 mt-5">
 
       <!-- about -->
-      <div class="row">
+      <div id="about" class="row">
         <div class="col-lg push-lg-4">
           <h3 class="mb-3">About Full Stack Conf</h3>
           <img src="img/pdx.jpg" alt="Portland" class="img-fluid rounded mb-3 hidden-xs-down">
@@ -139,7 +139,7 @@
       </div>
 
       <!-- schedule -->
-      <h3 class="display-4 text-center text-muted my-5">Conference Schedule</h3>
+      <h3 id="schedule" class="display-4 text-center text-muted my-5">Conference Schedule</h3>
 
         <ul class="list-group" id="schedule">
           <li class="list-group-item list-group-item-action flex-column align-items-start">
