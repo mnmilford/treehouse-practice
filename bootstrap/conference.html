@@ -251,7 +251,7 @@
     <div id="register" class="modal fade">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-header">
+          <div class="modal-header bg-info text-white">
             <h5 class="modal-title">Register for Full Stack Conf</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -259,7 +259,8 @@
           </div>
           <div class="modal-body">
             <form>
-              <h5 class="mb-3">Basic Info</h5>
+              <!-- BASIC INFO SECTION -->
+              <h5 class="mb-4">Basic Info</h5>
               <fieldset class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name">
@@ -270,13 +271,55 @@
               </fieldset>
               <fieldset class="form-group">
                 <label for="role">Job Role:</label>
-                <select class="form-control" name="user_role" id="role">
+                <select class="form-control custom-select" name="user_role" id="role">
                   <option value="full stack js developer">Full Stack JavaScript Developer</option>
                   <option value="front end developer">Front End Developer</option>
                   <option value="back end developer">Back End Developer</option>
                   <option value="designer">Designer</option>          
                   <option value="student">Student</option>
                 </select>
+                
+                <!-- TOPICS SECTION -->
+                <hr class="my-4">
+                <h5 class="mb-4">Which topics interest you most?</h5>
+                <div class="form-group">
+                  <div class="form-check">
+                    <label class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description">JavaScript Frameworks</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description">JavaScript Libraries</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description">Node.js</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description">Build Tools</span>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <label class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input">
+                      <span class="custom-control-indicator"></span>
+                      <span class="custom-control-description">ES2015</span>
+                    </label>
+                  </div>
+                </div>
+
               </fieldset>
             </form>
           </div>
