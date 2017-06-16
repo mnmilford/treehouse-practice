@@ -1,0 +1,24 @@
+.navbar .navbar-brand {
+  color: rgba(255, 255, 255, .85);
+  font-size: 1rem;
+  padding-top: .45rem;
+}
+
+.jumbotron {
+  background: url('../img/jumbo-bg.jpg');
+  background-size: cover;
+}
+
+.btn,
+.active {
+  transition: .4s;
+}
+
+.card {
+  transition: .1s;
+}
+
+.card:hover {
+  box-shadow: 1px 1px 3px rgba(0,0,0,.2),
+  -1px 1px 3px rgba(0,0,0,.2);
+}
