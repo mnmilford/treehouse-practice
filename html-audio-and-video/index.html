@@ -15,7 +15,17 @@
     
     <div class="wrapper">
       
-      <video src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4" type="video/mp4" controls />
+      <p>Embedded HTML5 video with all attributes in the video tag</p>
+      <video src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4" type="video/mp4" controls>
+      </video>
+
+      <hr>
+
+      <p>Embedded HTML5 video with attributes in a separate source tag</p>
+      <video controls>
+        <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4" type="video/mp4">
+        <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.ogg" type="video/ogg">
+      </video>
       
       
     </div>
