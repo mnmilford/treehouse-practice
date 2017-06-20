@@ -22,9 +22,10 @@ h1, h2 {
   text-align: center;
 }
 
-video, audio, .mejs-treehouse {
-  margin: 0 auto;
+.videoWrapper, .audioWrapper {
   display: block;
+  width: 100%;
+  margin: 0 auto;
   box-shadow: 2px 1px 3px rgba(0,0,0,.05), -2px 1px 3px rgba(0,0,0,.05);
 }
 
@@ -35,4 +36,24 @@ p {
 
 hr {
   margin: 3em 0;
+}
+
+/*iPad Targeted Media Queries*/
+@media screen and (min-width: 768px) {
+  .videoWrapper {
+    width: 80%;
+  }
+  .audioWrapper {
+    width: 50%;
+  }
+}
+
+/*Standard Laptops & Up Media Queries*/
+@media screen and (min-width: 1366px) {
+  .videoWrapper {
+    width: 50%;
+  }
+  .audioWrapper {
+    width: 30%;
+  }
 }
