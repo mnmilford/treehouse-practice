@@ -37,3 +37,23 @@ p {
 hr {
   margin: 3em 0;
 }
+
+/*iPad Targeted Media Queries*/
+@media screen and (min-width: 768px) {
+  .videoWrapper {
+    width: 80%;
+  }
+  .audioWrapper {
+    width: 50%;
+  }
+}
+
+/*Standard Laptops & Up Media Queries*/
+@media screen and (min-width: 1366px) {
+  .videoWrapper {
+    width: 50%;
+  }
+  .audioWrapper {
+    width: 30%;
+  }
+}
