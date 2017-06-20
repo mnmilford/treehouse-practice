@@ -6,8 +6,8 @@
     <title>HTML Video and Audio</title>
 
     <link rel="stylesheet" href="css/normalize.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.1.3/mediaelementplayer.css">
     <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/mejs/mediaelementplayer.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
@@ -17,35 +17,40 @@
     <div class="wrapper">
       
       <p>Embedded HTML5 video with all attributes in the video tag</p>
-      <video src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4" type="video/mp4" class="mejs__player">
-      </video>
+      <div class="videoWrapper">
+        <video style="max-width: 100%;" src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4" type="video/mp4" class="mejs__player">
+        </video>
+      </div>
 
       <hr>
 
       <p>Embedded HTML5 video with attributes in a separate source tag</p>
-      <video controls>
-        <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4" type="video/mp4">
-        <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.ogg" type="video/ogg">
-        <track label="English" kind="subtitles" srclang="en" src="bridge-captions.vtt" default>
-      </video>
+      <div class="videoWrapper">
+        <video style="max-width: 100%;" class="mejs__player">
+          <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4" type="video/mp4">
+          <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.ogg" type="video/ogg">
+          <track label="English" kind="subtitles" srclang="en" src="bridge-captions.vtt" default>
+        </video>
+      </div>
 
       <hr>
       
       <p>Embedded HTML5 audio tag</p>
-      <audio controls>
-        <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge-audio.mp3" type="audio/mp3">
-      </audio>
+      <div class="audioWrapper">
+        <audio style="max-width: 100%;" class="mejs__player">
+          <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge-audio.mp3" type="audio/mp3">
+        </audio>
+      </div>
 
     </div>
-
-
+  
     <!-- jQuery 3.2.1 -->
       <script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous"></script>
-    <!-- MEDIA ELEMENT JS -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.1.3/mediaelement-and-player.min.js"></script>
+    <!-- Media Element JS -->
+      <script src="js/mediaelement-and-player.min.js"></script>
   </body>
 </html>
 

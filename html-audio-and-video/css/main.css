@@ -22,9 +22,10 @@ h1, h2 {
   text-align: center;
 }
 
-video, audio, .mejs-treehouse {
-  margin: 0 auto;
+.videoWrapper, .audioWrapper {
   display: block;
+  width: 100%;
+  margin: 0 auto;
   box-shadow: 2px 1px 3px rgba(0,0,0,.05), -2px 1px 3px rgba(0,0,0,.05);
 }
 
