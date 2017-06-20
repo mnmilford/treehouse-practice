@@ -6,6 +6,7 @@
     <title>HTML Video and Audio</title>
 
     <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.1.3/mediaelementplayer.css">
     <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css">
   </head>
@@ -16,7 +17,7 @@
     <div class="wrapper">
       
       <p>Embedded HTML5 video with all attributes in the video tag</p>
-      <video src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4" type="video/mp4" controls>
+      <video src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4" type="video/mp4" class="mejs__player">
       </video>
 
       <hr>
@@ -37,6 +38,14 @@
 
     </div>
 
+
+    <!-- jQuery 3.2.1 -->
+      <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <!-- MEDIA ELEMENT JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.1.3/mediaelement-and-player.min.js"></script>
   </body>
 </html>
 
